@@ -1,5 +1,7 @@
 # AILink
 
+API using a 1D Convolutional Neural Network to provide sentimental analysis based on the Kaggle Rotten Tomatoes Movie Review Challenge (https://www.kaggle.com/c/sentiment-analysis-on-movie-reviews), with an accuracy of ~60% with word count vectorial encoding.
+
 ## Quickstart
 
 Go to `http://ailinkdev.herokuapp.com/compute/this is a sample text`
