@@ -1,5 +1,9 @@
 # AILink
 
+## Quickstart
+
+Go to `http://ailinkdev.herokuapp.com/compute/this is a sample text`
+
 ## Running Flask API 
 
 ```bash
