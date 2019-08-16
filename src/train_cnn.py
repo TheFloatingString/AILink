@@ -12,13 +12,13 @@ from keras.models import Sequential, load_model
 
 import json
 
-df = pd.read_csv("../data/train.tsv", delimiter='\t')
+df = pd.read_csv("data/train.tsv", delimiter='\t')
 
 text = df["Phrase"].values[:10000]
 
 vectorizer = CountVectorizer()
 vectorizer.fit(text)
-dump(vectorizer, '../static/count_vectorizer.joblib') 
+dump(vectorizer, 'static/count_vectorizer.joblib') 
 X = vectorizer.fit_transform(text).toarray()
 print("PICKLED!")
 X = np.expand_dims(X, axis=2)
@@ -44,9 +44,9 @@ adam = Adam(lr=0.0001)
 model.compile(optimizer=adam, loss="mse", metrics=["acc"])
 history = model.fit(X_train, y_train, epochs=20, batch_size=16, validation_split=0.2)
 
-model.save('../static/feedforward_rt_sent.h5') 
+model.save('static/feedforward_rt_sent.h5') 
 
-with open("../static/training_hist.json", "w") as fp:
+with open("static/training_hist.json", "w") as fp:
 	json.dump(history.history, fp)
 
 del model

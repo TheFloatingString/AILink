@@ -1,6 +1,6 @@
 from urllib.parse import unquote
 from flask import Flask
-from vectorizer import vectorize_sentence
+from src.vectorizer import vectorize_sentence
 import numpy as np
 from keras.models import load_model
 import tensorflow as tf
