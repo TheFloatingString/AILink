@@ -17,8 +17,8 @@ with open('data/training_hist.json', 'r') as json_file:
 	plt.close()
 
 	plt.title("Convolutional Neural Network Training Loss")
-	plt.plot(data["acc"], label="training data")
-	plt.plot(data["val_acc"], label="testing data")
+	plt.plot(data["loss"], label="training data")
+	plt.plot(data["val_loss"], label="testing data")
 	plt.xlabel("Epochs")
 	plt.ylabel("Loss (mean squared error)")
 	plt.legend()
