@@ -6,9 +6,6 @@ from keras.models import load_model
 import tensorflow as tf
 graph = tf.get_default_graph()
 
-# from keras import backend as K
-# K.set_image_dim_ordering('th')
-
 app = Flask(__name__)
 
 model = load_model("static/feedforward_rt_sent.h5")
@@ -19,7 +16,6 @@ def compute(input_string):
 	global graph
 	input_string = unquote(input_string)
 	X = vectorize_sentence(input_string)
-	# input_array = input_array.reshape(1,2555,1)
 	X = np.expand_dims(X, axis=2)
 
 	with graph.as_default():
